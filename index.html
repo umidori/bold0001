@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/league.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown=""
+				data-separator="^\n---$"
+				data-separator-vertical="^\n>>>$">
+				<script type="text/template">
+## 構造化開発の混乱の歴史
+
+鳥海秀一
+
+---
+### 講師紹介
+- - -
+* 名前：鳥海秀一
+* 出身：北海道
+* ボールド入社：2021年5月
+* 趣味：プログラミング
+<aside class="notes">
+  発表者が見るノート   
+  伝えたいことをメモ  
+</aside>
+
+---
+### 構造化開発とは
+- - -
+* ソフトウェアの開発効率を飛躍的に向上させる方法として、1960年代〜1980年代に盛んに喧伝された構造化を冠した手法全般
+* 様々な手法が構造化の名を冠して喧伝されたため、構造化とは何かを統一的に説明することは不可能
+
+---
+### 構造化開発の歴史概観
+- - -
+* 下記URLを参照
+https://www.weblio.jp/wkpja/content/構造化プログラミング_歴史
+
+
+---
+### 構造化開発を分類してみる
+- - -
+* 構造化開発を鳥海の私見で分類すると次のようになる
+	1. フローの正規化
+	1. モジュールプログラミング
+	1. 構造化分析
+	1. 構造化設計
+
+
+---
+### フローの正規化
+- - -
+* ダイクストラがACMに投稿した有名な「goto文は有害である」での提案がこのフローの正規化に相当する（[投稿の日本語訳はこちら](https://github.com/umidori/shellgei-57th-am/blob/main/Paper/GoToStatementConsideredHarmful.pdf)）
+* ジャクソンによる構造化プログラミングの手法はこの主張をデータの構造という視点から解釈したものと言える
+* ダイクストラは機械的なgoto文の排除に否定的だったが、のちにミルズらがその意味での構造化プログラミングを普及させた
+
+
+---
+### モジュールプログラミング
+- - -
+* ダイクストラが「[構造化プログラミング](https://calculator-cafe.com/readings/Structured_programming/Structured_programming.html)」の名称で提案した手法
+* ダイクストラの提案時、この機能を実装したプログラミング言語がなかったこともあり、この提案が当時の多くの人々に理解されることはなかった
+* 提案は後に、ModulaやTurbo PascalやC言語などのプログラミング言語に取り入れられ、さらにオブジェクト指向として発展することになった
+* モジュールプログラミングを説明している書籍は非常に少ない。貴重な書籍には下記がある
+	* [C実践プログラミング](https://www.amazon.co.jp/C実践プログラミング-第3版-Steve-Oualline/dp/4900900648/ref=sr_1_1?adgrpid=53626124112&gclid=CjwKCAiArY2fBhB9EiwAWqHK6m7STxys7Tm4Jy72rKdRjSBoTqDprTnFZPjSH4rKzvJZByQmcx8rkRoCi2IQAvD_BwE&hvadid=618622326886&hvdev=c&hvlocphy=1009317&hvnetw=g&hvqmt=e&hvrand=1338624752668343229&hvtargid=kwd-333608409250&hydadcr=27264_14598071&jp-ad-ap=0&keywords=c+実践プログラミング&qid=1675914459&sr=8-1)
+
+---
+### 構造化分析
+- - -
+* トム・デマルコが提案したシステムの設計手法（[簡単な説明はこちら](http://www.indsys.chuo-u.ac.jp/~hiroko/se/se03-20150424.pdf)）
+* DFD、データディクショナリ、[ミニ仕様書](./img/MINISPEC1.png)の3つの設計書を使用する
+* この手法は、MITの教科書「計算機プログラムの構造と解釈」が提案している[手法](./img/SICP1.png)と類似している（私見）
+* 書籍『構造化分析とシステム仕様』では、E・ヨードンの提案した構造化分析とセットで使うものとされているが、その場合手法として成立しなくなる
+
+---
+### 構造化設計
+- - -
+* 構造化設計は、IBM社員であった、ラリー・コンスタンチン、エドワード・ヨードン、G・J・マイヤーズ等によって提案された開発手法([簡単な説明はこちら](http://www.indsys.chuo-u.ac.jp/~hiroko/se/se04-20150501.pdf))
+* 手法はどれも役に立たないものばかりで使えない
+* 彼らが提案した手法には以下のようなものがある
+	* モスク型のモジュール構造図
+	* モジュールの評価手法
+	* 変換分析
+
+---
+### 構造化設計はなぜ使えないのか
+- - -
+* 構造化設計が使えないのは、提案者が当時の経営工学の主流の考え方であった[科学的管理技法](https://ja.wikipedia.org/wiki/科学的管理法)の手法を安易に真似したため
+* 科学的管理技法は、「管理者が作業を客観的に分析し、効率的な作業方法を考案し、それを作業員に指示する」という方法を推奨しているが、これは大半の作業が頭の中で行われるプログラミングには適していなかった
+
+
+---
+### 今も残る構造化設計の弊害
+- - -
+* 構造化設計の手法を使っている、あるいは使おうとしている企業はない（と思われる）
+* にもかかわらず現在でも権威として語られている（IPAの試験に出てくる）
+* このためソフトウェア開発の歴史を整合性を持って語れないが続き、入門者を混乱させ続けている
+* [混乱した書籍の例](https://www.amazon.co.jp/オブジェクト指向でなぜつくるのか-第３版-知っておきたいOOP、設計、アジャイル開発の基礎知識-平澤-章-ebook/dp/B092HDFJKK/ref=sr_1_1?adgrpid=66215873512&gclid=CjwKCAiAlp2fBhBPEiwA2Q10D2B6OgSBde2zD8urCp1S2yTotCSgOEuDcLqlFbcN--FIpAP2auB4bhoCYPgQAvD_BwE&hvadid=618680543168&hvdev=c&hvlocphy=1009333&hvnetw=g&hvqmt=e&hvrand=15278078264543845621&hvtargid=kwd-659533404469&hydadcr=27295_14598102&jp-ad-ap=0&keywords=オブジェクト+指向+で+なぜ+つくる+のか&qid=1676184407&sr=8-1)
+
+
+---
+### PGへの科学的管理技法適用批判
+- - -
+* [プログラミングの心理学](https://www.amazon.co.jp/プログラミングの心理学-25周年記念版-ジェラルド・M・ワインバーグ/dp/4822284700)
+	* G・M・ワインバーグが1971年に著した書籍
+	* プログラマは人間であると主張
+* [人月の神話](https://www.amazon.co.jp/人月の神話―狼人間を撃つ銀の弾はない-Professional-computing-フレデリック・P-ブルックス/dp/4894716658/ref=pd_lpo_1?pd_rd_w=S2yHJ&content-id=amzn1.sym.d769922e-188a-40cc-a180-3315f856e8d6&pf_rd_p=d769922e-188a-40cc-a180-3315f856e8d6&pf_rd_r=YA2ZRA35JZFXPX5XM68Q&pd_rd_wg=sEfdK&pd_rd_r=b250ecb4-c9d0-4cd9-8090-04005d365953&pd_rd_i=4894716658&psc=1)
+	* F・P・ブルックス,Jr.がOS/360の開発経験をもとに1975年に著した書籍
+	* ソフトウェア開発は単純作業ではないと主張
+* [ピープルウェア](https://www.amazon.co.jp/ピープルウエア-第3版-トム-デマルコ；ティモシー-リスター-ebook/dp/B00I96CJWO/ref=sr_1_1?adgrpid=57143794241&gclid=CjwKCAiAlp2fBhBPEiwA2Q10Dw9sac_xAzlZMqzkMNGrYmrnaN1MWsOVmCvI53k9hA1fifDN1b0HqhoCf60QAvD_BwE&hvadid=611333179606&hvdev=c&hvlocphy=1009333&hvnetw=g&hvqmt=e&hvrand=3094225356301932878&hvtargid=kwd-332212168942&hydadcr=16037_13594019&jp-ad-ap=0&keywords=ピープル+ウェア&qid=1676186380&s=books&sr=1-1)
+	* 構造化分析手法を生み出したトム・デマルコが1987年に著した書籍
+	* プログラマは人間であると主張
+
+---
+### 次回予告
+- - -
+* モジュールプログラミングからオブジェクト指向プログラミングへの進化
+
+
+				</script>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
