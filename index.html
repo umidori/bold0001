@@ -52,7 +52,7 @@ https://www.weblio.jp/wkpja/content/構造化プログラミング_歴史
 ---
 ### 構造化開発を分類してみる
 - - -
-* 構造化開発を鳥海の私見で分類すると次のようになる
+* 構造化開発を分類すると次のようになる（私見）
 	1. フローの正規化
 	1. モジュールプログラミング
 	1. 構造化分析
@@ -62,32 +62,38 @@ https://www.weblio.jp/wkpja/content/構造化プログラミング_歴史
 ---
 ### フローの正規化
 - - -
-* ダイクストラがACMに投稿した有名な「goto文は有害である」での提案がこのフローの正規化に相当する（[投稿の日本語訳はこちら](https://github.com/umidori/shellgei-57th-am/blob/main/Paper/GoToStatementConsideredHarmful.pdf)）
+* ダイクストラがACMに投稿した有名な「goto文は有害である」での提案がこのフローの正規化に相当（[投稿の日本語訳はこちら](https://github.com/umidori/shellgei-57th-am/blob/main/Paper/GoToStatementConsideredHarmful.pdf)）
 * ジャクソンによる構造化プログラミングの手法はこの主張をデータの構造という視点から解釈したものと言える
 * ダイクストラは機械的なgoto文の排除に否定的だったが、のちにミルズらがその意味での構造化プログラミングを普及させた
 
 
 ---
-### モジュールプログラミング
+### モジュールプログラミング①
 - - -
-* ダイクストラが「[構造化プログラミング](https://calculator-cafe.com/readings/Structured_programming/Structured_programming.html)」の名称で提案した手法
+* 1969年にダイクストラが「構造化プログラミング」というタイトルで発表した[研究成果発表書](https://calculator-cafe.com/readings/Structured_programming/Structured_programming.html)で提案したプログラムの作成手法
 * ダイクストラの提案時、この機能を実装したプログラミング言語がなかったこともあり、この提案が当時の多くの人々に理解されることはなかった
-* 提案は後に、ModulaやTurbo PascalやC言語などのプログラミング言語に取り入れられ、さらにオブジェクト指向として発展することになった
-* モジュールプログラミングを説明している書籍は非常に少ない。貴重な書籍には下記がある
-	* [C実践プログラミング](https://www.amazon.co.jp/C実践プログラミング-第3版-Steve-Oualline/dp/4900900648/ref=sr_1_1?adgrpid=53626124112&gclid=CjwKCAiArY2fBhB9EiwAWqHK6m7STxys7Tm4Jy72rKdRjSBoTqDprTnFZPjSH4rKzvJZByQmcx8rkRoCi2IQAvD_BwE&hvadid=618622326886&hvdev=c&hvlocphy=1009317&hvnetw=g&hvqmt=e&hvrand=1338624752668343229&hvtargid=kwd-333608409250&hydadcr=27264_14598071&jp-ad-ap=0&keywords=c+実践プログラミング&qid=1675914459&sr=8-1)
+* 現在、ダイクストラが提案したこの手法が構造化プログラミングの名で呼ばれることはない
+
+
+---
+### モジュールプログラミング②
+- - -
+* ダイクストラの提案は後に、[Modula](https://ja.wikipedia.org/wiki/Modula-2)、[Turbo Pascal](https://ja.wikipedia.org/wiki/Turbo_Pascal)、C言語などのプログラミング言語に取り入れられ、その後さらにオブジェクト指向として発展することになった
+* モジュールプログラミングを説明している書籍は非常に少ない（[貴重な書籍の例はこちら](https://www.amazon.co.jp/C実践プログラミング-第3版-Steve-Oualline/dp/4900900648/ref=sr_1_1?adgrpid=53626124112&gclid=CjwKCAiArY2fBhB9EiwAWqHK6m7STxys7Tm4Jy72rKdRjSBoTqDprTnFZPjSH4rKzvJZByQmcx8rkRoCi2IQAvD_BwE&hvadid=618622326886&hvdev=c&hvlocphy=1009317&hvnetw=g&hvqmt=e&hvrand=1338624752668343229&hvtargid=kwd-333608409250&hydadcr=27264_14598071&jp-ad-ap=0&keywords=c+実践プログラミング&qid=1675914459&sr=8-1)）
+
 
 ---
 ### 構造化分析
 - - -
 * トム・デマルコが提案したシステムの設計手法（[簡単な説明はこちら](http://www.indsys.chuo-u.ac.jp/~hiroko/se/se03-20150424.pdf)）
 * DFD、データディクショナリ、[ミニ仕様書](./img/MINISPEC1.png)の3つの設計書を使用する
-* この手法は、MITの教科書「計算機プログラムの構造と解釈」が提案している[手法](./img/SICP1.png)と類似している（私見）
-* 書籍『構造化分析とシステム仕様』では、E・ヨードンの提案した構造化分析とセットで使うものとされているが、その場合手法として成立しなくなる
+* この手法は、MITの教科書『[計算機プログラムの構造と解釈](https://www.amazon.co.jp/計算機プログラムの構造と解釈-第2版-ハロルド-エイブルソン/dp/4798135984/ref=pd_lpo_1?pd_rd_w=XAG4V&content-id=amzn1.sym.d769922e-188a-40cc-a180-3315f856e8d6&pf_rd_p=d769922e-188a-40cc-a180-3315f856e8d6&pf_rd_r=C4WYMTM111M2SNH63515&pd_rd_wg=yNlNa&pd_rd_r=8b1c2e39-2533-4830-911c-c5371e9ee9f8&pd_rd_i=4798135984&psc=1)』が提案している[手法](./img/SICP1.png)と類似している（私見）
+* 書籍『[構造化分析とシステム仕様](https://www.amazon.co.jp/構造化分析とシステム仕様-新装版-トム-デマルコ/dp/4822710041/ref=sr_1_1?adgrpid=51361540737&gclid=Cj0KCQiAi8KfBhCuARIsADp-A57wjTTixwHyq1U2qHsvBbFaqS4fstMrEqFeVERd-C6Pvkife5e30MgaApXqEALw_wcB&hvadid=618622179076&hvdev=c&hvlocphy=1009333&hvnetw=g&hvqmt=e&hvrand=8765011965013986992&hvtargid=kwd-334562162553&hydadcr=27265_14598048&jp-ad-ap=0&keywords=構造化分析とシステム仕様&qid=1676721517&s=books&sr=1-1)』では、E・ヨードンの提案した構造化設計とセットで使うと[説明している](./img/STRUCT1.png)が、その場合手法として成立しなくなる
 
 ---
 ### 構造化設計
 - - -
-* 構造化設計は、IBM社員であった、ラリー・コンスタンチン、エドワード・ヨードン、G・J・マイヤーズ等によって提案された開発手法([簡単な説明はこちら](http://www.indsys.chuo-u.ac.jp/~hiroko/se/se04-20150501.pdf))
+* 構造化設計は、IBM社員であった、L・コンスタンチン、E・ヨードン、G・J・マイヤーズ等によって提案された開発手法([簡単な説明はこちら](http://www.indsys.chuo-u.ac.jp/~hiroko/se/se04-20150501.pdf))
 * 手法はどれも役に立たないものばかりで使えない
 * 彼らが提案した手法には以下のようなものがある
 	* モスク型のモジュール構造図
@@ -104,10 +110,9 @@ https://www.weblio.jp/wkpja/content/構造化プログラミング_歴史
 ---
 ### 今も残る構造化設計の弊害
 - - -
-* 構造化設計の手法を使っている、あるいは使おうとしている企業はない（と思われる）
-* にもかかわらず現在でも権威として語られている（IPAの試験に出てくる）
-* このためソフトウェア開発の歴史を整合性を持って語れないが続き、入門者を混乱させ続けている
-* [混乱した書籍の例](https://www.amazon.co.jp/オブジェクト指向でなぜつくるのか-第３版-知っておきたいOOP、設計、アジャイル開発の基礎知識-平澤-章-ebook/dp/B092HDFJKK/ref=sr_1_1?adgrpid=66215873512&gclid=CjwKCAiAlp2fBhBPEiwA2Q10D2B6OgSBde2zD8urCp1S2yTotCSgOEuDcLqlFbcN--FIpAP2auB4bhoCYPgQAvD_BwE&hvadid=618680543168&hvdev=c&hvlocphy=1009333&hvnetw=g&hvqmt=e&hvrand=15278078264543845621&hvtargid=kwd-659533404469&hydadcr=27295_14598102&jp-ad-ap=0&keywords=オブジェクト+指向+で+なぜ+つくる+のか&qid=1676184407&sr=8-1)
+* 現在、構造化設計の手法を使っている、あるいは使おうとしている個人や組織は存在しない（私見）
+* にもかかわらず現在でも権威として生き残っている（[IPAの資料の例](https://www.ipa.go.jp/files/000056493.pdf)）
+* このためソフトウェア開発の歴史を整合性を持ったものとして語れない状態が続いており、入門者を混乱させ続けている（[書籍の例](https://www.amazon.co.jp/オブジェクト指向でなぜつくるのか-第３版-知っておきたいOOP、設計、アジャイル開発の基礎知識-平澤-章-ebook/dp/B092HDFJKK/ref=sr_1_1?adgrpid=66215873512&gclid=CjwKCAiAlp2fBhBPEiwA2Q10D2B6OgSBde2zD8urCp1S2yTotCSgOEuDcLqlFbcN--FIpAP2auB4bhoCYPgQAvD_BwE&hvadid=618680543168&hvdev=c&hvlocphy=1009333&hvnetw=g&hvqmt=e&hvrand=15278078264543845621&hvtargid=kwd-659533404469&hydadcr=27295_14598102&jp-ad-ap=0&keywords=オブジェクト+指向+で+なぜ+つくる+のか&qid=1676184407&sr=8-1)）
 
 
 ---
@@ -126,7 +131,7 @@ https://www.weblio.jp/wkpja/content/構造化プログラミング_歴史
 ---
 ### 次回予告
 - - -
-* モジュールプログラミングからオブジェクト指向プログラミングへの進化
+* モジュールプログラミングからオブジェクト指向プログラミングへ
 
 
 				</script>
